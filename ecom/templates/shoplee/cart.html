@@ -1,0 +1,95 @@
+{% extends 'shoplee/main.html' %}
+
+{% block body %}
+
+<!--CART-->
+    <div class="cart">
+        <div class="top">
+            <img src="/images/cart-onpage.jpg" alt="">
+            <div class="txt">Cart</div>
+        </div>
+        <div class="cart-container">
+            <div class="content">
+                <div class="items">
+                    <div class="item">
+                        <div class="image">
+                            <img
+                                src="/images/png-transparent-apple-watch-smartwatch-wearable-technology-apple-products-electronics-gadget-company-removebg-preview.png">
+                        </div>
+                        <div class="content">
+                            <div class="name">Shoes Are going to be sold</div>
+                            <div class="quantity">
+                                <input type="number" min="1" value="3">
+                                <div class="update">
+                                    <input type="submit" value="   ">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="price">$ 50</div>
+                        </div>
+                        <ion-icon name="close-outline"></ion-icon>
+
+                    </div>
+                    <div class="item">
+                        <div class="image">
+                            <img
+                                src="/images/png-transparent-apple-watch-smartwatch-wearable-technology-apple-products-electronics-gadget-company-removebg-preview.png">
+                        </div>
+                        <div class="content">
+                            <div class="name">Shoes Are going to be sold</div>
+                            <div class="quantity">
+                                <input type="number" min="1" value="3">
+                                <div class="update">
+                                    <input type="submit" value="   ">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="price">$ 50</div>
+                        </div>
+                        <ion-icon name="close-outline"></ion-icon>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                </div>
+                <div class="checkout-container">
+                    <div class="checkout">
+                        <div class="total">Cart Total</div>
+                        <div class="totall-container">
+                            <div class="totall">
+                                <div>Subotal:</div>
+                                <div>$ 500</div>
+                            </div>
+                            <div class="totall">
+                                <div>Sales-tax:</div>
+                                <div>$ 0</div>
+                            </div>
+                            
+
+
+                        </div>
+                        <div class="final-total">
+                            <div>Total:</div>
+                            <div>$ 500</div>
+                        </div>
+                        <a class="proceed">Proceed to checkout</a>
+                    </div>
+                    <a class="continue-shopping">Continue shopping <ion-icon name="refresh-outline"></ion-icon></a>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <!--CART (END)-->
+
+{% endblock %}

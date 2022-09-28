@@ -1,0 +1,332 @@
+
+
+.checkout-container{
+    padding: 20px 10px;
+}
+
+
+.shipping-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.coupon{font-family: Nunito;}
+.coupon .main-text{
+    margin-bottom: 5px;
+    font-size: large;
+}
+.coupon .main-text span{
+    color: #f0932b;
+    cursor: pointer;
+}
+.coupon .coupon-code{
+    display: flex;
+    gap:10px;
+    max-height: 0;
+    overflow: hidden;
+    transition:  .4s;    
+}
+.coupon .coupon-code input{
+    height: 30px;
+    outline: none;
+    background-color: #f1f1f17d;
+    border: 1px solid #f1f1f17d;
+    padding: 4px 20px;
+    font-size: medium;
+    transition: .4s;
+}
+.coupon-code input:focus,
+.coupon-code input:active{
+    border: 1px solid #CC9966;
+    background-color: #fff;
+}
+.coupon-code input[type=submit]{
+    background-color: #fff;
+    text-transform: uppercase;
+color: #CC9966;
+border: 1px solid #CC9966;
+cursor: pointer;
+text-align: center;
+font-size: small;
+transition: .4s;
+height: 39px;
+
+}
+.coupon-code input[type=submit]:hover{
+    background-color: #CC9966;
+    color: #fff;
+}
+.order-summary-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.shipping-address{
+    display: flex;
+    flex-direction: column;
+    font-family: Nunito;
+    gap: 20px;
+}
+.shipping-address .heading{
+    font-family: Bree Serif;
+    color: #f0932b;
+    margin: 10px 0px 0px 0px;
+    font-size: 24px;
+}
+.shipping-address .row{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.shipping-address input{
+    height: 35px;
+    outline: none;
+    background-color: #f1f1f17d;
+    border: 1px solid #f1f1f17d;
+    padding: 4px 20px;
+    font-size: medium;
+    font-family: Nunito;
+    transition: .4s;
+}
+.shipping-address input:invalid{
+    border: 1px solid rgb(255, 0, 0);
+    background-color: #fff;
+}
+.shipping-address input:invalid:required{
+    border: 1px solid rgb(255, 0, 0);
+    background-color: #fff;
+}
+.shipping-address input:focus,
+.shipping-address input:active{
+    border: 1px solid #CC9966;
+    background-color: #fff;
+}
+
+.order-summary{
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    font-family: Nunito;
+    padding: 20px 0px 10px 0px;
+    border-radius: 3px;
+}
+.order-summary .order{
+    font-family: Bree Serif;
+    color: #f0932b;
+    margin: 0px 15px 20px 15px;
+    font-size: 24px;
+    padding: 0px 0px 10px 0px;
+    border-bottom: 0.01em solid #cc996662;
+    
+}
+.order-summary .product-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 17px 10px 17px;
+    border-bottom: 0.01em solid rgba(0, 0, 0, 0.081);
+}
+.product-wrapper .product-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px 10px 0px;
+    gap: 40px;
+}
+.product-wrapper .product-container:nth-child(1){
+    font-family: Nunito;
+    color: #f0932b;    
+}
+.shipping-tax{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 17px 10px 17px;
+}
+.shipping-total{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 17px 10px 17px;
+    font-family: Nunito;
+    color: #f0932b;
+    font-size: large;
+
+}
+
+.order-summary .payment-method{
+    margin: 0px 30px 10px 30px;
+
+}
+.payment-method .methods{
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.payment-method .methods label{
+    padding-left: 8px;
+    cursor: pointer;
+}
+.payment-method .methods input{
+    cursor: pointer;
+    accent-color:rgba(187, 139, 49);
+    width: 13px;
+    height:13px;
+
+}
+.payment-method .methods input:checked ~ label{
+    color: rgb(187, 139, 49);
+
+}
+
+
+.order-summary .pay{
+margin: 10px 20px;
+text-transform: uppercase;
+color: #CC9966;
+border: 1px solid #CC9966;
+padding: 10px;
+cursor: pointer;
+text-align: center;
+font-size: small;
+transition: .4s;
+}
+.order-summary .pay:hover{
+    background-color: #CC9966;
+    color: #fff;
+}
+
+.methods .desc{
+    padding-left: 26px;
+    font-size: smaller;
+    max-height: 0;
+  overflow: hidden;
+  transition:  .4s;
+}
+.methods .desc:nth-child(1){
+    max-height: 20px;
+    overflow: hidden;
+}
+
+.order-summary-wrapper .continue-shopping{
+    margin: 0px 20px;
+    text-transform: uppercase;
+    border: 1px solid rgba(128, 128, 128, 0.37);
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: small;
+    transition: .4s;
+}
+.continue-shopping ion-icon{
+    padding-left: 5px;
+}
+.continue-shopping:hover{
+    color: #CC9966;
+    background-color: #f1f1f1;
+}
+
+
+
+@media screen and (min-width:577px){
+    .shipping-address .row{
+        flex-direction: row;
+        gap: 15px;
+
+    }
+    .row input{
+        width: 50%;
+    }
+    
+}
+@media screen and (min-width:993px){
+.order-summary .product-wrapper{gap:10px}
+.shipping-tax,
+.shipping-total{
+    margin: 10px 17px;
+}
+.order-summary{
+    padding: 30px 15px 10px 15px;
+}
+.order-summary-wrapper .continue-shopping{
+    margin:0px 35px;
+}
+}
+@media screen and (min-width:769px) and (max-width:992.9px){
+    
+.checkout-container{
+    padding: 20px 30px;
+}
+.shipping-address .row{
+
+    gap: 20px;
+
+}
+
+}
+@media screen and (min-width:993px) and (max-width:1105.9px){
+    .checkout-container{
+        padding: 20px 40px;
+    }
+    .shipping-container{
+        flex-direction: row;
+        gap: 20px;
+    
+    }
+
+    .order-summary-wrapper{
+    width: 35%;
+}
+.shipping-address{
+    width: 75%;
+}
+
+
+}
+
+@media screen and (min-width:1106px) {
+    .checkout-container{
+        padding: 20px 60px;
+    }
+    .shipping-container{
+        flex-direction: row;
+        gap: 20px;
+    
+    }
+
+    .order-summary-wrapper{
+    width: 30%;
+}
+.shipping-address{
+    width: 70%;
+}
+    
+}
+
+
+
+
+.hello{
+    position: relative;
+    width: 200px;
+
+}
+.hello input{
+
+    height: 40px;
+    padding: 0px 2px 0px 2px;
+}
+.hello .invalid{
+    position: absolute;
+    color: red;
+    font-size: 25px;
+    right: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+    opacity: 0;    
+}
+.hello .invalid.active{
+    opacity: 1;
+}
+
+.hello input.active{    
+    padding: 0px 35px 0px 2px;
+    border: 1px solid red;
+}

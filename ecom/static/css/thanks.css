@@ -1,0 +1,166 @@
+.thanks-container{
+    padding: 20px 80px;
+    height: calc(100vh - 155px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-image: url('/images/bg-thanks.jfif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.thanks .heading{
+    margin-top: 40px;
+    position: relative;
+    pointer-events: none;
+}
+
+.thanks .heading h2{
+    left:50%;
+    position:absolute;
+    color: #f0932b;
+    font-size: 8em;
+    transform:translate(-50%);
+    letter-spacing: 8px;
+}
+.thanks h3{
+    height: 180px;
+    align-items: flex-end;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-family: 'Nunito';
+    color: #f0932b;
+    pointer-events: none;
+}
+.thanks .heading h2:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 1px #f0932b;
+}
+.thanks .heading h2:nth-child(2){
+    color: #f0932b;
+    animation: water 4s ease-in-out infinite
+    
+}
+@keyframes water {
+    0%, 100%{
+        clip-path: polygon(0 34%, 13% 40%, 34% 46%, 53% 41%, 69% 40%, 87% 46%, 100% 57%, 99% 72%, 100% 100%, 0 100%);
+        }
+      50%{
+            clip-path: polygon(0 75%, 14% 65%, 34% 58%, 53% 63%, 71% 56%, 87% 46%, 100% 34%, 99% 72%, 100% 100%, 0 100%);    }
+}
+.thanks .slip{
+    font-family: Nunito;
+    margin-top: 80px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.thanks .slip a{
+    text-decoration: underline;
+}
+.thanks .slip a:focus{
+    color: #f0932b;
+}
+.thanks .buttons{
+    margin-top: 80px;
+    display:flex;
+    flex-direction: row;
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: Nunito;
+}
+.thanks .buttons .shop-more{
+    width: 170px;
+    text-transform: uppercase;
+    border: 1px solid rgba(128, 128, 128, 0.37);
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: medium;
+    transition: .4s;
+    background-color: #f0932b;
+    color: white;
+    letter-spacing: 2px;
+}
+.thanks .buttons .view-order{
+    width: 170px;
+    text-transform: uppercase;
+    border: 1px solid #f0932b;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: medium;
+    transition: .4s;
+    letter-spacing: 2px;
+    color: #f0932b;
+}
+.thanks .buttons .view-order:hover,
+.thanks .buttons .view-order:active
+{
+    background-color: #f0932b;
+    color: white;
+
+}
+.thanks .buttons .shop-more:hover,
+.thanks .buttons .view-order:active{
+    background-color: rgb(11, 60, 11);
+}
+
+
+
+@media screen and (max-width:576.9px) {
+    .thanks-container{
+        margin-top: 2px;
+    }
+    .thanks .heading h2{
+        font-size: 5em;
+        letter-spacing: 4px;
+    }
+    .thanks h3{
+        display: flex;
+        width: max-content;
+        font-size: 1.5em;
+        letter-spacing: 4px;
+        height: 130px;
+        
+    }
+    .thanks .slip{
+        margin-top:100px ;
+        width: max-content;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .thanks .buttons .shop-more{
+        width: 140px;
+
+    }
+    .thanks .buttons .view-order{
+        width: 140px;
+    }
+    .thanks .buttons{
+        margin-top: 40px;
+        
+    }
+    
+}
+@media screen and (min-width:577px)  and (max-width:762px){
+    .thanks h3{
+        display: flex;
+        width: max-content;
+        font-size: 2em;
+        letter-spacing: 4px;
+        height: 180px;
+        
+    }
+}

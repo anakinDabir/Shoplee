@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoplee</title>
+
+    <!-----------------LINKS-------------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet" crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+
+    <!--GOOGLE FONTS-->
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Bree Serif|Satisfy|Cinzel|Dancing Script|Titillium Web|DynaPuff|Shadows Into Light|Courgette|Arya|Nunito|Quicksand"
+        rel="stylesheet">
+    <!--OWL-CAROUSAL-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!--OWL-CAROUSAL(END)-->
+    <!-------------------LINKS------------------->
+
+    <!--------------------CSS-------------------->
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/banner.css' %}">
+    <link rel="stylesheet" href="{% static 'css/char.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hot.css' %}">
+    <link rel="stylesheet" href="{% static 'css/carousal.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dd.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bottom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/store.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/thanks.css' %}">
+    <link rel="stylesheet" href="{% static 'css/prod.css' %}">
+    <link rel="stylesheet" href="{% static 'css/notification.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blogs.css' %}">
+    <!-------------------CSS--------------------->
+
+
+</head>
+
+<body class="has-scrollbar">
+    <!-------------------NAV_BAR------------------>
+    <nav>
+        <div class="navbar-top">
+            <div class="logo">Shoplee</div>
+            <div class="minor">
+
+                <ion-icon name="heart-outline"></ion-icon>
+                {% if request.user.is_authenticated %}
+                <ion-icon class='profile' name="person-outline"></ion-icon>
+                {% else %}
+                <ion-icon name="person-add-outline"></ion-icon>
+                {% endif %}
+                <ion-icon class='cart-icon' name="cart-outline"></ion-icon>
+            </div>
+
+            <div class="hamburger ">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="nav-content">
+            <a href="{% url 'home' %}" class="nav-links ">Home</a>
+            <a href="{% url 'store' %}" class="nav-links">Store</a>
+            <a href="{% url 'home' %}#about" class="nav-links">About</a>
+            <a href="{% url 'blog' %}" class="nav-links">Blog</a>
+            <a href="{% url 'contact' %}" class="nav-links">Contact</a>
+        </div>
+
+        <div class="navbar-bottom">
+            <a>
+                <ion-icon class='menu-open' name="grid-outline"></ion-icon>
+            </a>
+            <a href="{% url 'store' %}">
+                <ion-icon name="storefront-outline"></ion-icon>
+            </a>
+            <a href="{% url 'home' %}">
+                <ion-icon name="home-outline"></ion-icon>
+            </a>
+            {% if request.user.is_authenticated %}
+            <a>
+                <ion-icon class="userbar" name="person-outline"></ion-icon>
+            </a>
+            {% else %}
+            <a>
+                <ion-icon name="person-add-outline"></ion-icon>
+                {% endif %}
+            </a>
+            <a>
+                <ion-icon name="cart-outline"></ion-icon>
+            </a>
+        </div>
+
+        <div class="menubar">
+            <h1>Menu</h1>
+            <ion-icon class="menu-close" name="close" size="large"></ion-icon>
+            <div class="menuContent">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+                <a href="{% url 'home' %}">Home</a>
+
+            </div>
+            <div class="menuContent">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+                <a href="{% url 'blog' %}">Blog</a>
+            </div>
+            <div class="menuContent">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+                <a href="{% url 'contact' %}">Contact Us</a>
+            </div>
+            <div class="menuContent">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+                <a href="#about">About</a>
+            </div>
+            <div class="menuContent">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+                <a href="">Cart</a>
+            </div>
+        </div>
+        <div class="user">
+            <ion-icon class="user-close" name="close" size="large"></ion-icon>
+            <div class="image">
+                <img src="/{{user.avatar}}" alt="">{{user.avatar}}
+            </div>
+            <div class="details">
+                <h2>{{user.name}}</h2>
+                <a href="">View Profile</a>
+                <a href="">Settings</a>
+                <a href="">Logout</a>
+            </div>
+        </div>
+    </nav>
+    <!-------------------NAV_BAR------------------>
+
+
+    <!-----------------NOTIFICATION--------------->
+    <!--HIDDEN AREA(START)-->
+    <div class="notification-hidden">
+        <div class="notification">
+
+            <div class="progress"></div>
+            <div class="not-content">
+                <ion-icon name="checkmark-circle"></ion-icon>
+                <ion-icon name="close"></ion-icon>
+                <div class="not-message">
+                    <span>Success!</span>
+                    <span></span>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--Display AREA(Start)-->
+    <div class="notification-inner">
+    </div>
+    <!-----------------NOTIFICATION--------------->
+
+    <!----------------------BODY------------------>
+    {% block body %}
+    {% endblock %}
+    <!----------------------BODY------------------>
+
+    <!-------------------FOOTER------------------->
+    <div class="bottom">
+        <div class="content">
+            <div class="about">
+                <div class="logo">Shoplee</div>
+                <div class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic dolore
+                    veritatis, consequuntur dolorum, nulla, maxime quis vero itaque assumenda asperiores unde illo
+                    dignissimos nobis recusandae. Sit dignissimos quasi tempora?</div>
+            </div>
+            <div class="useful-links">
+                <div class="head">Links</div>
+                <a href="">Blog</a>
+                <a href="">Contact Us</a>
+                <a href="">About</a>
+                <a href="">Cart</a>
+            </div>
+        </div>
+        <div class="payment"></div>
+        <div class="end">
+            <div class="links">
+                <a href=""><i id="insta" class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href=""><i class="fa-brands fa-github"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="copyright">&copy; Shoplee - 2022</div>
+        </div>
+    </div>
+    <!-------------------FOOTER------------------->
+
+    <!-----------------JAVASCRIPT----------------->
+    <!--OWL-CAROUSAL-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!--OWL-CAROUSAL(END)-->
+    <script src="{% static 'js/navbar.js' %}"></script>
+    <script src="{% static 'js/pagination.js' %}"></script>
+    <script src="{% static 'js/banner.js' %}"></script>
+    <script src="{% static 'js/timer.js' %}"></script>
+    <script src="{% static 'js/validation.js' %}"></script>
+    <script src="{% static 'js/toast-funct().js' %}"></script>
+    <script src="{% static 'js/replies-comments.js' %}"></script>
+    <script type = "text/javascript" src="{% static 'js/prod_page.js' %}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-----------------JAVASCRIPT----------------->
+
+</body>
+
+</html>

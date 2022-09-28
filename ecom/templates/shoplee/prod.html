@@ -1,0 +1,142 @@
+{% extends 'shoplee/main.html' %}
+
+{% block body %}
+  <!--PRODUCT--PAGE(START)-->
+    <div class="prod-container">
+        <div class="prod-main">
+            <div class="prod-combination">
+
+                <div class="prod-images">
+                    <div class="active-img active">
+                        <img src="" alt="">
+                    </div>
+                    <div class="inactive-img">
+                        {% for image in product.product_images.all %}
+                        <img class="" src="/{{image.image}}" alt="">
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+                <div class="prod-subMain">
+                    <div class="prod-brand">{{product.brand}}</div>
+                    <div class="prod-name">{{product.name}}</div>
+                    <div class="prod-reviews">
+                        <div class="prod-star">
+                            <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-{% if product.ratings > 1 %}solid{% else %}regular{% endif %} fa-star"></i></span>
+                                    <span><i class="fa-{% if product.ratings > 2 %}solid{% else %}regular{% endif %} fa-star"></i></span>
+                                    <span><i class="fa-{% if product.ratings > 3 %}solid{% else %}regular{% endif %} fa-star"></i></span>
+                                    <span><i class="fa-{% if product.ratings > 4 %}solid{% else %}regular{% endif %} fa-star"></i></span>
+                            <a href="#review-call">({{reviews.count}} review{{reviews.count|pluralize}})
+                                
+                            </a>
+                        </div>
+                    </div>
+                    <div class="prod-price">$&nbsp;{{product.price}}</div>
+                    <div class="prod-desc">{{product.desc}}</div>
+                    <div class="prod-selection">
+                        <div class="default-selection">
+                            <span><b>Size:</b> Medium</span>
+                            <span><b>Color:</b> Gray</span>
+                        </div>
+                        <div class="size-radio">
+
+                            <input type="radio" name="prodSize" id="sm" checked>
+                            <label for="sm">S</label>
+                            <input type="radio" name="prodSize" id="md">
+                            <label for="md">M</label>
+                            <input type="radio" name="prodSize" id="l">
+                            <label for="l">L</label>
+                            <input type="radio" name="prodSize" id="xl">
+                            <label for="xl">XL</label>
+                        </div>
+                    </div>
+                    <div class="prod-buttons">
+                        <a href="">Add to Cart</a>
+                        <a href="">Add to favourites</a>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="prod-additional">
+                <div class="heading">
+                    <div class="head" id="review-call">
+                        Review{{reviews.count|pluralize}}({{reviews.count}})
+                    </div>
+                    <div class="head">
+                        Additional Information
+                    </div>
+                </div>
+                <div class="prod-reviews">
+                    <div class="prod-desc">
+                        {% if reviews.count == 0 %}
+                        No reviews yet
+                        {% else %}
+                        {% for review in reviews %}
+                        <div class="review">
+                            <div class="img-name">
+                                <div class="img">
+                                    <img src="/{{review.user.avatar}}" alt="">
+                                </div>
+
+                            </div>
+                            <div class="text">
+                                <div class="rating">
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-{% if review.rating > 1 %}solid{% else %}regular{% endif %} fa-star"></i></span>
+                                    <span><i class="fa-{% if review.rating > 2 %}solid{% else %}regular{% endif %} fa-star"></i></span>
+                                    <span><i class="fa-{% if review.rating > 3 %}solid{% else %}regular{% endif %} fa-star"></i></span>
+                                    <span><i class="fa-{% if review.rating > 4 %}solid{% else %}regular{% endif %} fa-star"></i></span>
+                                </div>
+                                <div class="name">{{review.user.name}}</div>
+
+                                <div class="desc">{{review.text}}</div>
+                                <div class="time">15s ago</div>
+
+                                <div class="likes"><i class="fa-regular fa-heart"></i><span> Like (2)</span></div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        
+
+
+                    </div>
+
+
+
+                    <div class="add-review">
+                        <div class="add">Want to say about product? <span class="clickable">Click Here</span></div>
+                        <div class="add-container">
+                            <form action="" class="new-review" autocomplete="off">
+                                <textarea data-review="addNewReview" placeholder="Enter review here..." name=""
+                                    id=""></textarea><br>
+                                <div class="invalidReviewMsg">*Review shouldn't be empty</div>
+                                <div class="ratings">
+                                    <input type="radio" name="ratings" value="5" id="5"><label for="5">☆</label>
+                                    <input type="radio" name="ratings" value="4" id="4"><label for="4">☆</label>
+                                    <input type="radio" name="ratings" value="3" id="3"><label for="3">☆</label>
+                                    <input type="radio" name="ratings" value="2" id="2"><label for="2">☆</label>
+                                    <input type="radio" name="ratings" value="1" id="1" checked><label for="1">☆</label>
+                                </div>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prod-info">
+                    {{product.additional_info}}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--PRODUCT--PAGE(END)-->
+
+    
+{% endblock %}

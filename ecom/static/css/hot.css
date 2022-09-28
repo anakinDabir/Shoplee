@@ -1,0 +1,211 @@
+.container {
+    padding: 20px;
+}
+
+.container .title h1 {
+    pointer-events: none;
+    text-transform: uppercase;
+    font-family: Titillium Web;
+    text-align: center;
+    margin: 20px;
+    letter-spacing: 2px;
+    color: #f0932b;
+
+}
+
+.container .title h1 span {
+    color: #fff;
+    padding: 0px 10px;
+    display: inline-block;
+    background-color: #f0932b;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.container .products {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    align-items: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    overscroll-behavior-inline: contain;
+    
+}
+
+.products .product {
+    border-radius: 5px;
+    scroll-snap-align: start;
+    text-align: center;
+    height: 250px;
+    flex: 0 0 auto;
+    background-color: #f1f1ff85;
+    
+
+}
+
+.product .pic {
+    width: 100%;
+    height: 170px;
+    aspect-ratio: 1/1;
+    position: relative;
+    transition: 0.4s;
+
+}
+
+.product .pic img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.product .pic:hover {
+    transform: scale(0.9);
+
+}
+
+.product .pic:hover .imghover {
+    display: flex;
+}
+
+.pic .imghover {
+    display: none;
+    flex-direction: column;
+    width: 30px;
+    gap: 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.pic .imghover .lni {
+    color: #f0932b;
+    font-size: x-large;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.pic .imghover ion-icon {
+    color: #f0932b;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin: auto;
+}
+
+.pic .imghover .lni-heart-filled {
+    color: red;
+}
+
+.pic .imghover .lni-checkmark {
+    color: green;
+}
+
+
+
+
+.product .desc {
+    background-color: #ffff;
+    padding: 5px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border: 1px solid rgba(128, 128, 128, 0.126);
+}
+
+.desc h3 {
+    font-family: Nunito;
+}
+
+.desc p {
+    font-size: small;
+    font-family: Quicksand;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    pointer-events: none;
+}
+
+.desc s {
+    color: black;
+    padding: 0px 10px;
+    pointer-events: none
+}
+
+.desc span {
+    color: #f0932b;
+    pointer-events: none;
+}
+
+
+@media screen and (max-width:576.9px) {
+    .container .products {
+        gap: 7px;
+        width: calc(170*2px + 7px + 6px);
+    }
+
+    .products .product {
+        width: 170px;
+        flex: 0 0 auto;
+    }
+    .container .title h1 {
+        font-size: 25px;
+    
+    }
+    
+}
+
+@media screen and (min-width:577px) and (max-width:760.9px) {
+    .container .products {
+        gap: 10px;
+        width: calc(170*3px + 20px + 8px);
+    }
+
+    .products .product {
+        width: 170px;
+        flex: 0 0 auto;
+    }
+
+}
+
+@media screen and (min-width:761px) and (max-width:992.9px) {
+    .container .products {
+        gap: 10px;
+        width: calc(170*4px + 30px + 8px);
+    }
+
+    .products .product {
+        width: 170px;
+        flex: 0 0 auto;
+    }
+
+}
+
+
+@media screen and (min-width:993px) and (max-width:1293.9px) {
+    .container .products {
+        gap: 10px;
+        width: calc(170*5px + 40px + 8px);
+    }
+
+    .products .product {
+        width: 170px;
+        flex: 0 0 auto;
+    }
+
+}
+
+@media screen and (min-width:1294px) {
+    .container .products {
+        gap: 10px;
+        width: calc(170*6px + 50px + 9px);
+    }
+
+    .products .product {
+        width: 170px;
+        flex: 0 0 auto;
+    }
+}

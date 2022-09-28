@@ -1,0 +1,213 @@
+/* ainda se ye container use krna hai */
+
+/*                       ----->   Container   <-------                     */
+
+.blog-container {
+    padding: 20px 10px;
+    margin: 0px auto 0px auto;
+
+}
+
+@media (min-width: 576px) {
+    .blog-container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .blog-container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .blog-container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .blog-container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .blog-container {
+        max-width: 1320px;
+    }
+}
+
+/*                       ----->   Container   <-------                     */
+
+
+
+.blog-container .blog-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blog-inner .blog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blog-content .my-blog {
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1b3;
+    padding: 12px;
+    gap: 8px;
+}
+
+
+
+.my-blog .show {
+    font-family: Nunito;
+    display: flex;
+    font-size: 13px;
+
+}
+
+.my-blog .show span {
+    padding: 0 10px 0 10px;
+    border-right: 0.01em solid rgba(0, 0, 0, 0.432);
+}
+
+.my-blog .show span a {
+    color: black;
+    font-size: 13px;
+}
+
+.my-blog .show span a:hover {
+    color: #CC9966;
+}
+
+.my-blog .show span:nth-child(1) {
+    padding-left: 0px;
+}
+
+.my-blog .show span:nth-child(2) {
+    text-align: center;
+}
+
+.my-blog .show span:nth-child(3) {
+    border-right: none;
+    padding-right: 0px;
+}
+
+.my-blog .name {
+    font-family: Nunito;
+    font-size: x-large;
+    font-weight: bold;
+    color: #CC9966;
+    cursor: pointer;
+}
+
+.my-blog .text {
+    font-family: Quicksand;
+    font-size: medium;
+}
+
+.my-blog a {
+    color: #CC9966;
+    font-size: medium;
+    font-family: Nunito;
+    cursor: pointer;
+}
+
+.my-blog a:hover {
+    text-decoration: underline;
+}
+
+.blog-inner .blogTop {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.blogTop input:nth-child(1) {
+    height: 40px;
+    outline: none;
+    background-color: #f1f1f17d;
+    border: 1px solid #f1f1f17d;
+    padding: 4px 20px;
+    font-size: medium;
+    transition: .4s;
+    font-family: Nunito;
+    width: 250px;
+}
+
+.blogTop input:nth-child(1):focus,
+.blogTop input:nth-child(1):active {
+    border: 1px solid #CC9966;
+    background-color: #fff;
+}
+
+.blogTop input:nth-child(1).invalid {
+    border: 1px solid red;
+    background-color: #fff;
+}
+
+
+.blogTop input[type=submit] {
+    background-color: #CC9966;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #CC9966;
+    cursor: pointer;
+    text-align: center;
+    font-size: small;
+    transition: .4s;
+    height: 50px;
+    width: 90px;
+    font-family: Nunito;
+    font-size: medium;
+    letter-spacing: 1px;
+
+}
+
+.blogTop input[type=submit]:hover {
+    background-color: #fff;
+    color: #CC9966;
+}
+
+
+@media screen and (min-width:576px) {
+    .blog-inner .blog-content {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .blog-content .my-blog {
+        flex: 1 0 240px;
+    }
+
+    .blog-inner .blogTop {
+
+        justify-content: center;
+
+
+    }
+}
+
+@media screen and (min-width:768px) {
+
+    .blog-content .my-blog {
+        flex: 1 1 330px;
+    }
+
+    .blog-inner .blogTop {
+
+        justify-content: right;
+
+
+    }
+}

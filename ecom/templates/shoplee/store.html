@@ -1,0 +1,68 @@
+{% extends 'shoplee/main.html' %}
+
+{% block body %}
+
+<!-----------------STORE--------------->
+<div class="blog-container">
+    <div class="outer-store">
+        <form action="" class="search">
+            <input type="text" placeholder="Search here...">
+            <input type="submit" value="Search">
+        </form>
+        <div class="inner_store">
+            <div class="catMajor">
+                <div class="catTop">
+
+                    <ion-icon name="list-outline"></ion-icon>
+                    Categories
+                </div>
+                <div class="catBar">
+                    <span>
+                        <ion-icon name="close-outline"></ion-icon><span></span>
+                        <div class="cat">Categories</div>
+                        {% for category in Categories %}
+                        <div class="incat">
+                            <ion-icon name="caret-forward-outline"></ion-icon>
+                            <a href="">{{category.name}}</a>
+                        </div>
+                        {% endfor %}
+                        
+                </div>
+            </div>
+            <div class="products">
+                {% for product in Products %}
+                <div class="prod">
+                    <div class="prodImage">
+                        <img src="/{{product.product_images.first.image}}" alt="">
+                        <a href="">Add to cart</a>
+                    </div>
+                    <div class="prodContent">
+                        <div class="brand">{{product.brand}}</div>
+                        <a href="{{product.slug}}" class="name">{{product.name}}</a>
+                        <div class="price">
+                            $&nbsp;{{product.price}}
+                        </div>
+
+
+                    </div>
+                </div>
+                {% endfor %}
+                
+
+
+            </div>
+        </div>
+        <div class="storePagination">
+            <div class="pageBtn">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </div>
+            <div class="pageNo">1</div>
+            <div class="pageBtn">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------STORE (END)----------->
+
+{% endblock %}

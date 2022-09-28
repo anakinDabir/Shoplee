@@ -1,0 +1,372 @@
+.inner-blog {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inner-blog .blogImage {
+    width: 100%;
+    max-height: 300px;
+    aspect-ratio: 16/9;
+
+}
+
+.inner-blog .blogImage img {
+    width: 100%;
+    height: 100%;
+    object-position: top;
+    object-fit: cover;
+}
+
+.inner-blog .heading {
+    font-family: Nunito;
+    font-size: 30px;
+    color: #f0932b;
+    font-weight: bold;
+
+}
+
+.inner-blog .show {
+    display: flex;
+
+
+}
+
+.inner-blog .show span {
+    font-family: Quicksand;
+    border-right: 0.01em solid rgba(0, 0, 0, 0.432);
+    padding: 0 10px 0 10px;
+
+}
+
+.inner-blog .show span a {
+    color: black;
+}
+
+.inner-blog .show span a:hover {
+    color: #CC9966;
+}
+
+.inner-blog .show span:nth-child(1) {
+    padding-left: 0px;
+}
+
+.inner-blog .show span:nth-child(2) {
+    text-align: center;
+}
+
+.inner-blog .show span:nth-child(3) {
+    border-right: none;
+    padding-right: 0px;
+}
+
+.inner-blog .content {
+    font-family: Nunito;
+    text-align: justify;
+}
+
+
+/*                     ----COmments-----                   */
+.inner-blog .blogComments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.inner-blog .blogComments .body {
+    border: 0.001em solid #cc996677;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+
+}
+
+.inner-blog .blogComments .body .postComment {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.postComment .commentImg {
+    aspect-ratio: 1/1;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: aliceblue;
+
+}
+
+.postComment .commentImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.postComment .comment-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding-left: 5px;
+
+}
+
+.postComment .comment-text .name {
+    font-family: Nunito;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.postComment .time {
+    font-size: 16px;
+    margin-top: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(0, 0, 0, 0.692);
+}
+
+.postComment .desc {
+    font-family: Quicksand;
+}
+
+
+.postComment .likes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+.postComment .likes span {
+    margin-right: 40px;
+    display: inline-block;
+    margin-top: 4px;
+    font-size: medium;
+    color: #f0932b;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.postComment .likes span:hover,
+.postComment .likes span:active {
+    text-decoration: underline;
+
+}
+
+.postComment .likes .spanForm ,
+.inner-blog .addNewComment{
+    max-height: 0;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.postComment .likes .reply,
+.inner-blog .addNewComment form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+
+
+
+
+}
+
+.postComment .likes .reply textarea {
+    width: 100%;
+    outline: none;
+    border: 0.01em solid #f1f1f1;
+    background-color: #f1f1f1;
+    resize: none;
+    min-height: 80px;
+    font-family: Nunito;
+    font-size: medium;
+    padding: 8px 15px;
+    box-sizing: border-box;
+    transition: .1s;
+}
+
+.postComment .likes .reply textarea:focus,
+.postComment .likes .reply textarea:active,
+.inner-blog .addNewComment textarea:focus,
+.inner-blog .addNewComment textarea:active {
+    border: 1px solid #CC9966;
+    background-color: #fff;
+}
+
+.postComment .likes .reply textarea.invalid,
+.inner-blog .addNewComment textarea.invalid {
+    border: 1px solid red;
+    background-color: #fff;
+}
+
+.postComment .likes .reply input[type=submit] {
+    background-color: #CC9966;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #CC9966;
+    cursor: pointer;
+    text-align: center;
+    font-size: small;
+    transition: .4s;
+    height: 45px;
+    width: 100px;
+    font-family: Nunito;
+    font-size: medium;
+    letter-spacing: 2px;
+
+
+}
+
+.postComment .likes .reply input[type=submit]:hover,
+.inner-blog .addNewComment input:hover {
+    background-color: #fff;
+    color: #CC9966;
+}
+
+/* Adding comments */
+.inner-blog .addComment {
+
+    font-family: Nunito;
+    font-size: larger;
+
+
+}
+
+.inner-blog .addComment .heading {
+    font-size: larger;
+    color: black;
+    margin-top: -10px;
+    margin-bottom: 5px;
+    pointer-events: none;
+    font-weight: 100;
+
+
+}
+
+.inner-blog .addComment .heading span {
+    color: #f0932b;
+    cursor: pointer;
+    pointer-events: all;
+    margin-left: 10px;
+}
+
+.inner-blog .addNewComment {
+    display: flex;
+    flex-direction: column;
+}
+
+.inner-blog .addNewComment textarea {
+    resize: none;
+    outline: none;
+    border: none;
+    border: 0.01em solid #f1f1f1;
+    background-color: #f1f1f1;
+    border-radius: 2px;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    color: black;
+    font-family: Nunito;
+    font-size: medium;
+}
+
+.inner-blog .addNewComment input {
+    background-color: #CC9966;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #CC9966;
+    cursor: pointer;
+    text-align: center;
+    font-size: small;
+    transition: .4s;
+    height: 50px;
+    width: 120px;
+    font-family: Nunito;
+    font-size: medium;
+    letter-spacing: 2px;
+
+
+}
+
+
+
+
+
+
+@media screen and (min-width:576px) {
+    .inner-blog .blogComments .body {
+        border-top: 0.001em solid #cc996677;
+        border-bottom: 0.001em solid #cc996677;
+        border-left: none;
+        border-right: none;
+
+
+
+
+
+    }
+}
+
+@media screen and (min-width:992px) {
+    .inner-blog .blogImage {
+        max-height: 450px;
+
+    }
+
+    .inner-blog .content {
+        font-size: 17px;
+    }
+
+    .inner-blog .blogComments .body .postComment {
+        gap: 50px;
+
+    }
+
+    .inner-blog .blogComments {
+        width: 720px;
+        margin: auto;
+    }
+
+    .inner-blog .blogComments .body {
+        border-top: 0.001em solid #cc996677;
+        border-bottom: 0.001em solid #cc996677;
+        border-left: none;
+        border-right: none;
+
+
+
+
+
+    }
+    .inner-blog .addComment {
+        width: 720px;
+        margin: auto;
+    
+    
+    }
+}
+
+@media screen and (min-width:1400px) {
+
+    .inner-blog .blogImage {
+        max-height: 500px;
+
+    }
+
+    .inner-blog .heading {
+        font-size: 35px;
+    }
+
+    .inner-blog .content {
+        font-size: 18px;
+    }
+}

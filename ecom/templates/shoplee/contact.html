@@ -1,0 +1,30 @@
+{% extends 'shoplee/main.html' %}
+
+{% block body %}
+<!--------------CONTACT US-------------->
+<div class="contact">
+    <div class="top">
+        <img src="/images/5527691.jpg" alt="">
+        <div class="txt">Let's Talk...</div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <form class="form" action="" autocomplete="off">
+                <h1>Contact Us</h1>
+                <input type="text" name="contactName" placeholder="Name">
+                <input type="text" name="contactEmail" placeholder="Email">
+                <textarea name="contactMessage" placeholder="Enter Message"></textarea>
+                <input type="submit" value="Submit">
+            </form>
+
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108882.86151459019!2d74.12512331640626!3d31.480478699999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903ccac08143b%3A0x9b0637753efd261e!2sPUCIT-New%20Campus%20(New%20Building)!5e0!3m2!1sen!2s!4v1660567013481!5m2!1sen!2s"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<!------------CONTACT US (END)---------->
+{% endblock %}
